@@ -40,7 +40,7 @@ After data preprocessing, the ``/data/`` should contains six differnt files, i.e
 * msrvtt-train-idxs.p
 * msrvtt-train-words.p
 
-Processed data files are also provided [here](https://drive.google.com/drive/folders/1u6HsgZf9dksKbCQHuPcuHTuOlbMfXMLH?usp=sharing).
+Processed data files are also provided [here](https://drive.google.com/drive/folders/1S9iA74uvoFcKO8z7kOUN7ueMtxTILf2V?usp=sharing).
 
 ### Training
 
@@ -57,14 +57,14 @@ python train.py --learning_rate 2e-5 --learning_rate_decay_start -1 --max_epochs
 The training process can be like:  
 ![](https://github.com/TSSGN/TSSGN/blob/main/MSR-VTT-Training.png)  
 
-Meanwhile, the input features, i.e., input_c3d_feature and input_app_feature can be downloaded from [here]().
+Meanwhile, the input features, i.e., input_c3d_feature and input_app_feature can be downloaded from [here](https://drive.google.com/drive/folders/1QvAwTmviFTqufwyucslnEVpvW_J0Br5J?usp=sharing).
 
 ### Evaluation
 ```bash
 python eval.py --model log/model-best.pth --infos_path log/infos_-best.pkl --output_json results.json
 ```
 
-The pretrained models can be downloaded from [here]()  
+The pretrained models can be downloaded from [here](https://drive.google.com/drive/folders/1PfahB1qAhwM2IoMbBMH7Z7QKiwGvKY0h?usp=sharing)  
 The coco-type preprocessed dataset of MSR-VTT for evaluation can also be downloaded from [here]()
 
 ### Performance
@@ -75,7 +75,7 @@ BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | CIDEr | METEOR | ROUGE
 :---: | :---: | :---: | :---: | :---: | :---: | :---: 
 81.9|66.8|52.0|38.5|49.7|27.7|61.0  
 
-The generated results can be downloaded from [here](), which is a json file. 
+The generated results can be downloaded from [here](https://drive.google.com/drive/folders/1tFOBftlDz_ujMASUKdcfGH1kh3Vl1oqZ?usp=sharing), which is a json file. 
 
 ### Acknowledgements
 
