@@ -19,7 +19,7 @@ Make sure you have downloaded ``stanford-corenlp-full-2018-10-05``, and put it i
 The json file of MSR-VTT, you can find it [here](http://ms-multimedia-challenge.com/2017/dataset).
 
 ```bash
-python scripts/tree_representation.py --input_json data/dataset_msrvtt.json --ouput_json data/dataset.json
+python scripts/tree_representation.py --input_json data/dataset_msrvtt.json --output_json data/dataset.json
 ```
 
 ##### Label Preparation
