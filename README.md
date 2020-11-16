@@ -40,11 +40,11 @@ After data preprocessing, the ``/data/`` should contains six differnt files, i.e
 * msrvtt-train-idxs.p
 * msrvtt-train-words.p
 
-All processed files are also provided [here]().
+All processed data files are also provided [here](https://drive.google.com/drive/folders/1u6HsgZf9dksKbCQHuPcuHTuOlbMfXMLH).
 
 ### Training
 
-##### Training with Cross-entropy Loss
+##### Training with Cross-Entropy Loss
 ```bash
 python train.py --learning_rate 2e-4 --learning_rate_decay_start 0 --learning_rate_decay_every 2 --learning_rate_decay_rate 0.8 --max_epochs 12 --batch_size 10 --save_checkpoint_every 300 --checkpoint_path log --dataset msrvtt --self_critical_after -1 --input_json data/msrvtttalk.json --input_label_h5 data/msrvtttalk_label.h5 --input_c3d_feature data/msrvtt_c3d_features.h5 --input_app_feature data/msrvtt_appearance_features.h5 --cached_tokens data/msrvtt-train-idxs --caption_model TSSGN
 ```
@@ -77,4 +77,4 @@ BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | CIDEr | METEOR | ROUGE
 
 ### Acknowledgements
 
-The implementation is based on [self-critical.pytorch]{https://github.com/ruotianluo/self-critical.pytorch}.
+The implementation is based on [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch).
