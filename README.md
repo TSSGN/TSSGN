@@ -25,7 +25,7 @@ python scripts/tree_representation.py --input_json data/dataset_msrvtt.json --ou
 ##### Label Preparation
 
 ```bash
-python scripts/prepare_label.py --input_json data/dataset.json --output_json dataset/msrvtttalk.json --output_h5 data/msrvtttalk_label
+python scripts/prepare_label.py --input_json data/dataset.json --output_json data/msrvtttalk.json --output_h5 data/msrvtttalk_label
 ```
 
 ```bash
