@@ -61,7 +61,7 @@ Meanwhile, the input features, i.e., input_c3d_feature and input_app_feature can
 
 ### Evaluation
 ```bash
-python eval.py --model log/model-best.pth --infos_path log/infos_-best.pkl --output_json results.json --input_json data/msrvtttalk.json --input_label_h5 data/msrvtttalk_label.h5 --input_c3d_feature data/msrvtt_c3d_features.h5 --input_att_feature data/msrvtt_appearance_features.h5 --cached_tokens data/msrvtt-train-idxs
+python eval.py --model log/model-best.pth --infos_path log/infos_-best.pkl --output_json results.json --input_json data/msrvtttalk.json --input_label_h5 data/msrvtttalk_label.h5 --input_c3d_feature data/msrvtt_c3d_features.h5 --input_app_feature data/msrvtt_appearance_features.h5 --cached_tokens data/msrvtt-train-idxs
 ```
 
 The pretrained models can be downloaded from [here](https://drive.google.com/drive/folders/1PfahB1qAhwM2IoMbBMH7Z7QKiwGvKY0h?usp=sharing)  
