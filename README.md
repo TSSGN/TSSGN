@@ -65,7 +65,7 @@ python eval.py --model log/model-best.pth --infos_path log/infos_-best.pkl --out
 ```
 
 The pretrained models can be downloaded from [here](https://drive.google.com/drive/folders/1PfahB1qAhwM2IoMbBMH7Z7QKiwGvKY0h?usp=sharing)  
-The coco-type preprocessed dataset of MSR-VTT for evaluation can also be downloaded from [here]()
+The coco-type preprocessed dataset of MSR-VTT for evaluation can also be downloaded from [here](https://drive.google.com/drive/folders/1LH7c1_ek34AGzZktnjtXyzfgDFPrgMs6?usp=sharing), and put it into ``/coco-caption/annotations/``
 
 ### Performance
 
