@@ -80,7 +80,11 @@ BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | CIDEr | METEOR | ROUGE
 :---: | :---: | :---: | :---: | :---: | :---: | :---: 
 81.9|66.8|52.0|38.5|49.7|27.7|61.0  
 
-The generated results can be downloaded from [here](https://drive.google.com/drive/folders/1tFOBftlDz_ujMASUKdcfGH1kh3Vl1oqZ?usp=sharing), which is a json file. Within the json file, all generated test caption are ordered in CIDEr score, with Status of topology prediction.
+The generated results can be downloaded from [here](https://drive.google.com/drive/folders/1tFOBftlDz_ujMASUKdcfGH1kh3Vl1oqZ?usp=sharing).
+
+
+An example in MSR-VTT is shown here:
+![](https://github.com/TSSGN/TSSGN/blob/main/qualitative.png)  
 
 
 ### Acknowledgements
