@@ -102,13 +102,13 @@ def main(params):
 
     out = {}
     out['ix_to_word'] = itow
-    out['videos'] = []
+    out['images'] = []
     for i, video in enumerate(videos):
         jvideo = {}
         jvideo["split"] = video["split"]
         jvideo["id"] = video["imgid"]
         jvideo["filename"] = video["filename"]
-        out['videos'].append(jvideo)
+        out['images'].append(jvideo)
     json.dump(out, open(params["output_json"], "w"))
 
 if __name__ == "__main__":
@@ -116,7 +116,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--input_json", default='data/dataset.json')
     parser.add_argument("--output_json", default='data/msrvtttalk.json')
-    parser.add_argument("--output_h5", default='data/msrvtttalk_label.h5')
+    parser.add_argument("--output_h5", default='data/msrvtttalk_label')
 
     args = parser.parse_args()
     params = vars(args)

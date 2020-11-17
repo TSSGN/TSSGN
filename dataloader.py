@@ -266,11 +266,12 @@ class DataLoader(data.Dataset):
         fc_batch, label_batch, status_batch, gts, infos = \
             zip(*sorted(zip(fc_batch, label_batch, status_batch, gts, infos), key=lambda x: 0, reverse=True))
 
+        data = {}
         max_att_len = max([_.shape[0] for _ in fc_batch])
         data['fc_feats'] = np.zeros([len(fc_batch) * seq_per_img, max_att_len, fc_batch[0].shape[1]], dtype='float32')
         for i in range(len(fc_batch)):
             data['fc_feats'][i * seq_per_img:(i + 1) * seq_per_img, :fc_batch[i].shape[0]] = fc_batch[i]
-
+        data['att_masks'] = None
         data['labels'] = np.vstack(label_batch)
         data['status'] = np.vstack(status_batch)
 

@@ -45,40 +45,67 @@ def ParseSentence(raw, tokens):
     return format
 
 def main(params):
-    file = json.load(open(params["input_json"], "r"))
-    output = {}
-    for sentence in tqdm(file["sentences"]):
-        caption = sentence["caption"]
-        video_id = sentence["video_id"]
-        tokens = nlp.word_tokenize(caption)
-        format = ParseSentence(caption, tokens)
-        if video_id not in output.keys():
-            output[video_id] = []
-        video = {}
-        video['raw'] = caption
-        video['tokens'] = tokens
-        video['format'] = format
-        output[video_id].append(video)
-    split = {}
-    for video in file["videos"]:
-        video_split = video["split"]
-        video_id = video["video_id"]
-        split[video_id] = video_split
+    train = json.load(open(params["train_json"], "r"))
+    val = json.load(open(params["val_json"], "r"))
+    test = json.load(open(params["test_json"], "r"))
     videos = []
-    for videoid, sentences in output.items():
-        tmp = {}
-        tmp['filename'] = videoid
-        tmp['imgid'] = videoid.split("video")[1]
-        tmp['sentences'] = sentences
-        tmp['split'] = split[video_id]
-        videos.append(tmp)
+    for videoid, sentences in tqdm(train.items()):
+        video = {}
+        video["filename"] = videoid
+        video["imgid"] = videoid.split("video")[1]
+        video["split"] = "train"
+        video["sentences"] = []
+        for sentence in sentences:
+            raw = sentence
+            tokens = nlp.word_tokenize(raw)
+            format = ParseSentence(raw, tokens)
+            sent = {}
+            sent["raw"] = raw
+            sent["format"] = format
+            sent["tokens"] = tokens
+            video["sentences"].append(sent)
+        videos.append(video)
+    for videoid, sentences in tqdm(val.items()):
+        video = {}
+        video["filename"] = videoid
+        video["imgid"] = videoid.split("video")[1]
+        video["split"] = "val"
+        video["sentences"] = []
+        for sentence in sentences:
+            raw = sentence
+            tokens = nlp.word_tokenize(raw)
+            format = ParseSentence(raw, tokens)
+            sent = {}
+            sent["raw"] = raw
+            sent["format"] = format
+            sent["tokens"] = tokens
+            video["sentences"].append(sent)
+        videos.append(video)
+    for videoid, sentences in tqdm(test.items()):
+        video = {}
+        video["filename"] = videoid
+        video["imgid"] = videoid.split("video")[1]
+        video["split"] = "test"
+        video["sentences"] = []
+        for sentence in sentences:
+            raw = sentence
+            tokens = nlp.word_tokenize(raw)
+            format = ParseSentence(raw, tokens)
+            sent = {}
+            sent["raw"] = raw
+            sent["format"] = format
+            sent["tokens"] = tokens
+            video["sentences"].append(sent)
+        videos.append(video)
     with open(params["output_json"], "w") as f:
         json.dump(videos, f)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--input_json", default="data/dataset_msrvtt.json")
+    parser.add_argument("--train_json", default="data/train_caption_2016.json")
+    parser.add_argument("--val_json", default="data/val_caption_2016.json")
+    parser.add_argument("--test_json", default="data/test_caption_2016.json")
     parser.add_argument("--output_json", default="data/dataset.json")
 
     args = parser.parse_args()

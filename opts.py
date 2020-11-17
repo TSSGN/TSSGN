@@ -53,6 +53,13 @@ def parse_opt():
     parser.add_argument('--optim_epsilon', type=float, default=1e-8)
     parser.add_argument('--weight_decay', type=float, default=0)
 
+    parser.add_argument('--label_smoothing', type=float, default=0)
+    parser.add_argument('--noamopt', action='store_true')
+    parser.add_argument('--noamopt_warmup', type=int, default=2000)
+    parser.add_argument('--noamopt_factor', type=float, default=1)
+    parser.add_argument('--reduce_on_plateau', action='store_true')
+    parser.add_argument('--use_warmup', type=int, default=0)
+
     parser.add_argument('--scheduled_sampling_start', type=int, default=-1)
     parser.add_argument('--scheduled_sampling_increase_every', type=int, default=2)
     parser.add_argument('--scheduled_sampling_increase_prob', type=float, default=0.05)
