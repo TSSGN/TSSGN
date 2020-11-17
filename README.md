@@ -42,7 +42,7 @@ After data preprocessing, the ``/data/`` should contains eight differnt files, i
 * msrvtt-train-idxs.p
 * msrvtt-train-words.p
 
-Processed data files are also provided [here](https://drive.google.com/drive/folders/1S9iA74uvoFcKO8z7kOUN7ueMtxTILf2V?usp=sharing).
+Processed data files are also provided [here](https://drive.google.com/drive/folders/1S9iA74uvoFcKO8z7kOUN7ueMtxTILf2V?usp=sharing), download and put them in ``/data/``
 
 ### Training
 
@@ -80,7 +80,8 @@ BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | CIDEr | METEOR | ROUGE
 :---: | :---: | :---: | :---: | :---: | :---: | :---: 
 81.9|66.8|52.0|38.5|49.7|27.7|61.0  
 
-The generated results can be downloaded from [here](https://drive.google.com/drive/folders/1tFOBftlDz_ujMASUKdcfGH1kh3Vl1oqZ?usp=sharing), which is a json file. 
+The generated results can be downloaded from [here](https://drive.google.com/drive/folders/1tFOBftlDz_ujMASUKdcfGH1kh3Vl1oqZ?usp=sharing), which is a json file. Within the json file, all generated test caption are ordered in CIDEr score, with Status of topology prediction.
+
 
 ### Acknowledgements
 
