@@ -62,7 +62,7 @@ The training process can be like:
 Meanwhile, the input features, i.e., input_c3d_feature and input_app_feature can be downloaded from [here](https://drive.google.com/drive/folders/1QvAwTmviFTqufwyucslnEVpvW_J0Br5J?usp=sharing).
 
 
-For features extraction, given an video, 2 2D-CNN and a 3D-CNN are employed as video encoder to extract the motion features and appearance features. Specifically, for each video, we uniformly sample 28 keyframes, and 28 clips with such keyframes as the center frame for each clip. For motion features, an **InceptionResNextV2** is employed to extract a 1536-D appearance feature on each keyframe, and a **C3D** model is them employed to extract a 2048-D motion feature on each clip. The utilized implementations are based on [InceptionResNextV2]() and [C3D]().
+For features extraction, given an video, 2 2D-CNN and a 3D-CNN are employed as video encoder to extract the motion features and appearance features. Specifically, for each video, we uniformly sample 28 keyframes, and 28 clips with such keyframes as the center frame for each clip. For motion features, an **InceptionResNextV2** is employed to extract a 1536-D appearance feature on each keyframe, and a **C3D** model is them employed to extract a 2048-D motion feature on each clip. The utilized implementations are based on [InceptionResNextV2](https://github.com/open-mmlab/mmdetection) and [C3D](https://github.com/kenshohara/video-classification-3d-cnn-pytorch).
 
 ### Evaluation
 ```bash
