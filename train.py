@@ -224,7 +224,7 @@ def train(opt):
                 if lang_stats is not None:
                     for k, v in lang_stats.items():
                         add_summary_value(tb_summary_writer, k, v, iteration)
-                val_result_history[iteration] = {'loss': val_loss, 'lang_stats': lang_stats, 'predictions': predictions}
+                val_result_history[iteration] = {'loss': val_loss, 'lang_stats': lang_stats}
 
                 # Save model if is improving on validation result
                 if opt.language_eval == 1:
