@@ -19,7 +19,7 @@ Make sure you have downloaded ``stanford-corenlp-full-2018-10-05``, and put it i
 The json file of MSR-VTT, you can find it [here](http://ms-multimedia-challenge.com/2017/dataset).
 
 ```bash
-python scripts/tree_representation.py --input_json data/dataset_msrvtt.json --output_json data/dataset.json
+python scripts/tree_representation.py --train_json data/train_caption_2016.json --val_json data/val_caption_2016.json --test_json data/test_caption_2016.json --output_json data/dataset.json
 ```
 
 ##### Label Preparation
@@ -32,8 +32,10 @@ python scripts/prepare_label.py --input_json data/dataset.json --output_json dat
 python scripts/prepare_ngrams.py --input_json data/dataset.json --dict_json data/msrvtttalk.json --output_pkl data/msrvtt-train --split train
 ```
 
-After data preprocessing, the ``/data/`` should contains six differnt files, i.e.:
-* dataset.json
+After data preprocessing, the ``/data/`` should contains eight differnt files, i.e.:
+* train_caption_2016.json
+* val_caption_2016.json
+* test_caption_2016.json
 * dataset_msrvtt.json
 * msrvtttalk.json
 * msrvtttalk_label.h5
@@ -58,6 +60,9 @@ The training process can be like:
 ![](https://github.com/TSSGN/TSSGN/blob/main/MSR-VTT-Training.png)  
 
 Meanwhile, the input features, i.e., input_c3d_feature and input_app_feature can be downloaded from [here](https://drive.google.com/drive/folders/1QvAwTmviFTqufwyucslnEVpvW_J0Br5J?usp=sharing).
+
+
+For features extraction, given an video, 2 2D-CNN and a 3D-CNN are employed as video encoder to extract the motion features and appearance features. Specifically, for each video, we uniformly sample 28 keyframes, and 28 clips with such keyframes as the center frame for each clip. For motion features, an **InceptionResNextV2** is employed to extract a 1536-D appearance feature on each keyframe, and a **C3D** model is them employed to extract a 2048-D motion feature on each clip. The utilized implementations are based on [InceptionResNextV2]() and [C3D]().
 
 ### Evaluation
 ```bash
